@@ -3,7 +3,7 @@
 $DB_host = "localhost";
 $DB_user = "root";
 $DB_pass = "";
-$DB_name = "pdo_pagination";
+$DB_name = "pdo_pagination2";
 
 
 try {
