@@ -23,7 +23,7 @@ include_once 'dbconfig.php';
                 <th colspan="2" align="center">Actions</th>
             </tr>
             <?php
-            $query = "SELECT * FROM tbl_users";
+            $query = "SELECT * FROM tbl_users order by id desc";
             $records_per_page = 10;
             $newquery = $crud->paging($query, $records_per_page);
             $crud->dataview($newquery);
