@@ -57,7 +57,7 @@ if (isset($_GET['edit_id'])) {
                 </tr>
 
                 <tr>
-                    <td>Your E-mail ID</td>
+                    <td>Email</td>
                     <td><input type='text' name='email_id' class='form-control' value="<?php echo $email_id; ?>"
                                required></td>
                 </tr>

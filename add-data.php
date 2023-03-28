@@ -56,7 +56,7 @@ if (isset($_GET['inserted'])) {
                 </tr>
 
                 <tr>
-                    <td>Your E-mail ID</td>
+                    <td>Email</td>
                     <td><input type='text' name='email_id' class='form-control' required></td>
                 </tr>
 

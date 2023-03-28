@@ -37,18 +37,13 @@ class crud
     public function update($id, $fname, $lname, $email, $contact)
     {
         try {
-            $stmt = $this->db->prepare("UPDATE tbl_users SET first_name=:fname, 
-                                                 last_name=:lname, 
-                email_id=:email, 
-                contact_no=:contact
-             WHERE id=:id ");
+            $stmt = $this->db->prepare("UPDATE tbl_users SET first_name=:fname, last_name=:lname, email_id=:email, contact_no=:contact WHERE id=:id ");
             $stmt->bindparam(":fname", $fname);
             $stmt->bindparam(":lname", $lname);
             $stmt->bindparam(":email", $email);
             $stmt->bindparam(":contact", $contact);
             $stmt->bindparam(":id", $id);
             $stmt->execute();
-
             return true;
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -85,7 +80,7 @@ class crud
                                     class="glyphicon glyphicon-edit"></i></a>
                     </td>
                     <td align="center">
-                        <a href="delete.php?delete_id=<?php print($row['id']); ?>"><i
+                        <a class="text-danger" href="delete.php?delete_id=<?php print($row['id']); ?>"><i
                                     class="glyphicon glyphicon-remove-circle"></i></a>
                     </td>
                 </tr>
@@ -129,6 +124,11 @@ class crud
             if (isset($_GET["page"])) {
                 $current_page = $_GET["page"];
             }
+
+            if($current_page == 1) {
+                echo "<li class='disabled'><a href=''>First</a></li>";
+                echo "<li class='disabled'><a href=''>Previous</a></li>";
+            }
             if ($current_page != 1) {
                 $previous = $current_page - 1;
                 echo "<li><a href='" . $self . "?page=1'>First</a></li>";
@@ -146,6 +146,11 @@ class crud
                 echo "<li><a href='" . $self . "?page=" . $next . "'>Next</a></li>";
                 echo "<li><a href='" . $self . "?page=" . $total_no_of_pages . "'>Last</a></li>";
             }
+            if ($current_page == $total_no_of_pages) {
+                echo "<li class='disabled'><a href=''>Next</a></li>";
+                echo "<li class='disabled'><a href=''>Last</a></li>";
+            }
+
             ?></ul><?php
         }
     }

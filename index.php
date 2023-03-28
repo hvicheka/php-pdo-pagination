@@ -18,7 +18,7 @@ include_once 'dbconfig.php';
                 <th>#</th>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>E - mail ID</th>
+                <th>Email</th>
                 <th>Contact No</th>
                 <th colspan="2" align="center">Actions</th>
             </tr>
