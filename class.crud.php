@@ -70,18 +70,18 @@ class crud
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                 <tr>
-                    <td><?php print($row['id']); ?></td>
-                    <td><?php print($row['first_name']); ?></td>
-                    <td><?php print($row['last_name']); ?></td>
-                    <td><?php print($row['email_id']); ?></td>
-                    <td><?php print($row['contact_no']); ?></td>
+                    <td><?php echo($row['id']); ?></td>
+                    <td><?php echo($row['first_name']); ?></td>
+                    <td><?php echo($row['last_name']); ?></td>
+                    <td><?php echo($row['email_id']); ?></td>
+                    <td><?php echo($row['contact_no']); ?></td>
                     <td align="center">
-                        <a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i
-                                    class="glyphicon glyphicon-edit"></i></a>
+                        <a href="edit-data.php?edit_id=<?php echo($row['id']); ?>">
+                        <i class="glyphicon glyphicon-edit"></i></a>
                     </td>
                     <td align="center">
-                        <a class="text-danger" href="delete.php?delete_id=<?php print($row['id']); ?>"><i
-                                    class="glyphicon glyphicon-remove-circle"></i></a>
+                        <a class="text-danger" href="delete.php?delete_id=<?php echo($row['id']); ?>">
+                        <i class="glyphicon glyphicon-remove-circle"></i></a>
                     </td>
                 </tr>
                 <?php
